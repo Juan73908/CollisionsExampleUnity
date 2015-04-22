@@ -9,10 +9,10 @@ public class PlanetController : MonoBehaviour {
 
 	// The collision starts NOW
 	void OnCollisionEnter2D(Collision2D collision) {
-		//if (collision.gameObject.GetComponent<PlanetController>() != null){
+		if (collision.gameObject.GetComponent<PlanetController>() != null){
 			// We are colliding with another planet
 			Instantiate(collisionPrefab, GetMiddlePoint (collision.contacts), Quaternion.identity);
-		//}
+		}
 	}
 
 	// Helper method to find the middle point of the contacts
